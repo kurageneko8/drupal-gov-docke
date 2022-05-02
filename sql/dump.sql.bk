@@ -32,7 +32,7 @@ CREATE TABLE `block_content` (
   UNIQUE KEY `block_content_field__uuid__value` (`uuid`),
   UNIQUE KEY `block_content__revision_id` (`revision_id`),
   KEY `block_content_field__type__target_id` (`type`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='The base table for block_content entities.';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The base table for block_content entities.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +66,7 @@ CREATE TABLE `block_content__body` (
   KEY `bundle` (`bundle`),
   KEY `revision_id` (`revision_id`),
   KEY `body_format` (`body_format`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Data storage for block_content field body.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Data storage for block_content field body.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -102,7 +102,7 @@ CREATE TABLE `block_content_field_data` (
   KEY `block_content__revision_id` (`revision_id`),
   KEY `block_content_field__type__target_id` (`type`),
   KEY `block_content__status_type` (`status`,`type`,`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='The data table for block_content entities.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The data table for block_content entities.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -133,7 +133,7 @@ CREATE TABLE `block_content_field_revision` (
   `revision_translation_affected` tinyint DEFAULT NULL,
   PRIMARY KEY (`revision_id`,`langcode`),
   KEY `block_content__id__default_langcode__langcode` (`id`,`default_langcode`,`langcode`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='The revision data table for block_content entities.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The revision data table for block_content entities.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -164,7 +164,7 @@ CREATE TABLE `block_content_revision` (
   PRIMARY KEY (`revision_id`),
   KEY `block_content__id` (`id`),
   KEY `block_content_field__revision_user__target_id` (`revision_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='The revision table for block_content entities.';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The revision table for block_content entities.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -198,7 +198,7 @@ CREATE TABLE `block_content_revision__body` (
   KEY `bundle` (`bundle`),
   KEY `revision_id` (`revision_id`),
   KEY `body_format` (`body_format`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Revision archive storage for block_content field body.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Revision archive storage for block_content field body.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -229,7 +229,7 @@ CREATE TABLE `cache_bootstrap` (
   PRIMARY KEY (`cid`),
   KEY `expire` (`expire`),
   KEY `created` (`created`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Storage for the cache API.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Storage for the cache API.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -259,7 +259,7 @@ CREATE TABLE `cache_config` (
   PRIMARY KEY (`cid`),
   KEY `expire` (`expire`),
   KEY `created` (`created`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Storage for the cache API.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Storage for the cache API.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -290,7 +290,7 @@ CREATE TABLE `cache_container` (
   PRIMARY KEY (`cid`),
   KEY `expire` (`expire`),
   KEY `created` (`created`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Storage for the cache API.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Storage for the cache API.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -321,7 +321,7 @@ CREATE TABLE `cache_data` (
   PRIMARY KEY (`cid`),
   KEY `expire` (`expire`),
   KEY `created` (`created`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Storage for the cache API.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Storage for the cache API.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -352,7 +352,7 @@ CREATE TABLE `cache_default` (
   PRIMARY KEY (`cid`),
   KEY `expire` (`expire`),
   KEY `created` (`created`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Storage for the cache API.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Storage for the cache API.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -383,7 +383,7 @@ CREATE TABLE `cache_discovery` (
   PRIMARY KEY (`cid`),
   KEY `expire` (`expire`),
   KEY `created` (`created`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Storage for the cache API.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Storage for the cache API.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -414,7 +414,7 @@ CREATE TABLE `cache_dynamic_page_cache` (
   PRIMARY KEY (`cid`),
   KEY `expire` (`expire`),
   KEY `created` (`created`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Storage for the cache API.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Storage for the cache API.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -444,7 +444,7 @@ CREATE TABLE `cache_entity` (
   PRIMARY KEY (`cid`),
   KEY `expire` (`expire`),
   KEY `created` (`created`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Storage for the cache API.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Storage for the cache API.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -475,7 +475,7 @@ CREATE TABLE `cache_menu` (
   PRIMARY KEY (`cid`),
   KEY `expire` (`expire`),
   KEY `created` (`created`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Storage for the cache API.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Storage for the cache API.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -505,7 +505,7 @@ CREATE TABLE `cache_page` (
   PRIMARY KEY (`cid`),
   KEY `expire` (`expire`),
   KEY `created` (`created`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Storage for the cache API.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Storage for the cache API.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -535,7 +535,7 @@ CREATE TABLE `cache_render` (
   PRIMARY KEY (`cid`),
   KEY `expire` (`expire`),
   KEY `created` (`created`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Storage for the cache API.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Storage for the cache API.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -565,7 +565,7 @@ CREATE TABLE `cache_toolbar` (
   PRIMARY KEY (`cid`),
   KEY `expire` (`expire`),
   KEY `created` (`created`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Storage for the cache API.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Storage for the cache API.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -588,7 +588,7 @@ CREATE TABLE `cachetags` (
   `tag` varchar(255) CHARACTER SET ascii COLLATE ascii_general_ci NOT NULL DEFAULT '' COMMENT 'Namespace-prefixed tag string.',
   `invalidations` int NOT NULL DEFAULT '0' COMMENT 'Number incremented when the tag is invalidated.',
   PRIMARY KEY (`tag`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Cache table for tracking cache tag invalidations.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Cache table for tracking cache tag invalidations.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -613,7 +613,7 @@ CREATE TABLE `config` (
   `name` varchar(255) CHARACTER SET ascii COLLATE ascii_general_ci NOT NULL DEFAULT '' COMMENT 'Primary Key: Config object name.',
   `data` longblob COMMENT 'A serialized configuration object data.',
   PRIMARY KEY (`collection`,`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='The base table for configuration data.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The base table for configuration data.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -641,7 +641,7 @@ CREATE TABLE `content_moderation_state` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `content_moderation_state_field__uuid__value` (`uuid`),
   UNIQUE KEY `content_moderation_state__revision_id` (`revision_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='The base table for content_moderation_state entities.';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The base table for content_moderation_state entities.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -679,7 +679,7 @@ CREATE TABLE `content_moderation_state_field_data` (
   KEY `content_moderation_state__revision_id` (`revision_id`),
   KEY `content_moderation_state_field__uid__target_id` (`uid`),
   KEY `content_moderation_state__09628d8dbc` (`workflow`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='The data table for content_moderation_state entities.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The data table for content_moderation_state entities.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -716,7 +716,7 @@ CREATE TABLE `content_moderation_state_field_revision` (
   KEY `content_moderation_state__id__default_langcode__langcode` (`id`,`default_langcode`,`langcode`),
   KEY `content_moderation_state_field__uid__target_id` (`uid`),
   KEY `content_moderation_state__09628d8dbc` (`workflow`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='The revision data table for content_moderation_state…';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The revision data table for content_moderation_state…';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -743,7 +743,7 @@ CREATE TABLE `content_moderation_state_revision` (
   `revision_default` tinyint DEFAULT NULL,
   PRIMARY KEY (`revision_id`),
   KEY `content_moderation_state__id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='The revision table for content_moderation_state entities.';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The revision table for content_moderation_state entities.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -781,7 +781,7 @@ CREATE TABLE `file_managed` (
   KEY `file_field__uri` (`uri`(191)),
   KEY `file_field__status` (`status`),
   KEY `file_field__changed` (`changed`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='The base table for file entities.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The base table for file entities.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -810,7 +810,7 @@ CREATE TABLE `file_usage` (
   KEY `type_id` (`type`,`id`),
   KEY `fid_count` (`fid`,`count`),
   KEY `fid_module` (`fid`,`module`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Track where a file is used.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Track where a file is used.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -838,7 +838,7 @@ CREATE TABLE `flood` (
   PRIMARY KEY (`fid`),
   KEY `allow` (`event`,`identifier`,`timestamp`),
   KEY `purge` (`expiration`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Flood controls the threshold of events, such as the number…';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Flood controls the threshold of events, such as the number…';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -866,7 +866,7 @@ CREATE TABLE `help_search_items` (
   PRIMARY KEY (`sid`),
   KEY `section_plugin_id` (`section_plugin_id`),
   KEY `topic_id` (`topic_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Stores information about indexed help search items';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Stores information about indexed help search items';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -891,7 +891,7 @@ CREATE TABLE `inline_block_usage` (
   `layout_entity_id` varchar(128) CHARACTER SET ascii COLLATE ascii_general_ci DEFAULT '0' COMMENT 'The ID of the parent entity.',
   PRIMARY KEY (`block_content_id`),
   KEY `type_id` (`layout_entity_type`,`layout_entity_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Track where a block_content entity is used.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Track where a block_content entity is used.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -915,7 +915,7 @@ CREATE TABLE `key_value` (
   `name` varchar(128) CHARACTER SET ascii COLLATE ascii_general_ci NOT NULL DEFAULT '' COMMENT 'The key of the key-value pair. As KEY is a SQL reserved keyword, name was chosen instead.',
   `value` longblob NOT NULL COMMENT 'The value.',
   PRIMARY KEY (`collection`,`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Generic key-value storage table. See the state system for…';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Generic key-value storage table. See the state system for…';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -942,7 +942,7 @@ CREATE TABLE `key_value_expire` (
   `expire` int NOT NULL DEFAULT '2147483647' COMMENT 'The time since Unix epoch in seconds when this item expires. Defaults to the maximum possible time.',
   PRIMARY KEY (`collection`,`name`),
   KEY `expire` (`expire`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Generic key/value storage table with an expiration.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Generic key/value storage table with an expiration.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -971,7 +971,7 @@ CREATE TABLE `menu_link_content` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `menu_link_content_field__uuid__value` (`uuid`),
   UNIQUE KEY `menu_link_content__revision_id` (`revision_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='The base table for menu_link_content entities.';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The base table for menu_link_content entities.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1016,7 +1016,7 @@ CREATE TABLE `menu_link_content_data` (
   KEY `menu_link_content__revision_id` (`revision_id`),
   KEY `menu_link_content_field__link__uri` (`link__uri`(30)),
   KEY `menu_link_content__enabled_bundle` (`enabled`,`bundle`,`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='The data table for menu_link_content entities.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The data table for menu_link_content entities.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1053,7 +1053,7 @@ CREATE TABLE `menu_link_content_field_revision` (
   PRIMARY KEY (`revision_id`,`langcode`),
   KEY `menu_link_content__id__default_langcode__langcode` (`id`,`default_langcode`,`langcode`),
   KEY `menu_link_content_field__link__uri` (`link__uri`(30))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='The revision data table for menu_link_content entities.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The revision data table for menu_link_content entities.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1084,7 +1084,7 @@ CREATE TABLE `menu_link_content_revision` (
   PRIMARY KEY (`revision_id`),
   KEY `menu_link_content__id` (`id`),
   KEY `menu_link_content__ef029a1897` (`revision_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='The revision table for menu_link_content entities.';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The revision table for menu_link_content entities.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1140,7 +1140,7 @@ CREATE TABLE `menu_tree` (
   KEY `menu_parents` (`menu_name`,`p1`,`p2`,`p3`,`p4`,`p5`,`p6`,`p7`,`p8`,`p9`),
   KEY `menu_parent_expand_child` (`menu_name`,`expanded`,`has_children`,`parent`(16)),
   KEY `route_values` (`route_name`(32),`route_param_key`(16))
-) ENGINE=InnoDB AUTO_INCREMENT=164 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Contains the menu tree hierarchy.';
+) ENGINE=InnoDB AUTO_INCREMENT=164 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Contains the menu tree hierarchy.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1170,7 +1170,7 @@ CREATE TABLE `node` (
   UNIQUE KEY `node_field__uuid__value` (`uuid`),
   UNIQUE KEY `node__vid` (`vid`),
   KEY `node_field__type__target_id` (`type`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='The base table for node entities.';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The base table for node entities.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1204,7 +1204,7 @@ CREATE TABLE `node__body` (
   KEY `bundle` (`bundle`),
   KEY `revision_id` (`revision_id`),
   KEY `body_format` (`body_format`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Data storage for node field body.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Data storage for node field body.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1237,7 +1237,7 @@ CREATE TABLE `node__field_body_text` (
   KEY `bundle` (`bundle`),
   KEY `revision_id` (`revision_id`),
   KEY `field_body_text_format` (`field_body_text_format`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Data storage for node field field_body_text.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Data storage for node field field_body_text.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1269,7 +1269,7 @@ CREATE TABLE `node__field_policy_category` (
   KEY `bundle` (`bundle`),
   KEY `revision_id` (`revision_id`),
   KEY `field_policy_category_target_id` (`field_policy_category_target_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Data storage for node field field_policy_category.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Data storage for node field field_policy_category.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1299,7 +1299,7 @@ CREATE TABLE `node_access` (
   `grant_update` tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Boolean indicating whether a user with the realm/grant pair can edit this node.',
   `grant_delete` tinyint unsigned NOT NULL DEFAULT '0' COMMENT 'Boolean indicating whether a user with the realm/grant pair can delete this node.',
   PRIMARY KEY (`nid`,`gid`,`realm`,`langcode`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Identifies which realm/grant pairs a user must possess in…';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Identifies which realm/grant pairs a user must possess in…';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1343,7 +1343,7 @@ CREATE TABLE `node_field_data` (
   KEY `node__status_type` (`status`,`type`,`nid`),
   KEY `node__frontpage` (`promote`,`status`,`sticky`,`created`),
   KEY `node__title_type` (`title`(191),`type`(4))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='The data table for node entities.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The data table for node entities.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1379,7 +1379,7 @@ CREATE TABLE `node_field_revision` (
   PRIMARY KEY (`vid`,`langcode`),
   KEY `node__id__default_langcode__langcode` (`nid`,`default_langcode`,`langcode`),
   KEY `node_field__uid__target_id` (`uid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='The revision data table for node entities.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The revision data table for node entities.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1411,7 +1411,7 @@ CREATE TABLE `node_revision` (
   KEY `node__nid` (`nid`),
   KEY `node_field__langcode` (`langcode`),
   KEY `node_field__revision_uid__target_id` (`revision_uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='The revision table for node entities.';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The revision table for node entities.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1445,7 +1445,7 @@ CREATE TABLE `node_revision__body` (
   KEY `bundle` (`bundle`),
   KEY `revision_id` (`revision_id`),
   KEY `body_format` (`body_format`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Revision archive storage for node field body.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Revision archive storage for node field body.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1478,7 +1478,7 @@ CREATE TABLE `node_revision__field_body_text` (
   KEY `bundle` (`bundle`),
   KEY `revision_id` (`revision_id`),
   KEY `field_body_text_format` (`field_body_text_format`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Revision archive storage for node field field_body_text.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Revision archive storage for node field field_body_text.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1510,7 +1510,7 @@ CREATE TABLE `node_revision__field_policy_category` (
   KEY `bundle` (`bundle`),
   KEY `revision_id` (`revision_id`),
   KEY `field_policy_category_target_id` (`field_policy_category_target_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Revision archive storage for node field field_policy…';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Revision archive storage for node field field_policy…';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1544,7 +1544,7 @@ CREATE TABLE `path_alias` (
   KEY `path_alias__status` (`status`,`id`),
   KEY `path_alias__alias_langcode_id_status` (`alias`(191),`langcode`,`id`,`status`),
   KEY `path_alias__path_langcode_id_status` (`path`(191),`langcode`,`id`,`status`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='The base table for path_alias entities.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The base table for path_alias entities.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1573,7 +1573,7 @@ CREATE TABLE `path_alias_revision` (
   `revision_default` tinyint DEFAULT NULL,
   PRIMARY KEY (`revision_id`),
   KEY `path_alias__id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='The revision table for path_alias entities.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The revision table for path_alias entities.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1601,7 +1601,7 @@ CREATE TABLE `queue` (
   PRIMARY KEY (`item_id`),
   KEY `name_created` (`name`,`created`),
   KEY `expire` (`expire`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Stores items in queues.';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Stores items in queues.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1630,7 +1630,7 @@ CREATE TABLE `router` (
   `number_parts` smallint NOT NULL DEFAULT '0' COMMENT 'Number of parts in this router path.',
   PRIMARY KEY (`name`),
   KEY `pattern_outline_parts` (`pattern_outline`(191),`number_parts`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Maps paths to various callbacks (access, page and title)';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Maps paths to various callbacks (access, page and title)';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1657,7 +1657,7 @@ CREATE TABLE `semaphore` (
   PRIMARY KEY (`name`),
   KEY `value` (`value`),
   KEY `expire` (`expire`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Table for holding semaphores, locks, flags, etc. that…';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Table for holding semaphores, locks, flags, etc. that…';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1679,7 +1679,7 @@ DROP TABLE IF EXISTS `sequences`;
 CREATE TABLE `sequences` (
   `value` int unsigned NOT NULL AUTO_INCREMENT COMMENT 'The value of the sequence.',
   PRIMARY KEY (`value`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Stores IDs.';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Stores IDs.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1708,7 +1708,7 @@ CREATE TABLE `sessions` (
   PRIMARY KEY (`sid`),
   KEY `timestamp` (`timestamp`),
   KEY `uid` (`uid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Drupal''s session handlers read and write into the sessions…';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Drupal''s session handlers read and write into the sessions…';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1736,7 +1736,7 @@ CREATE TABLE `taxonomy_index` (
   `created` int NOT NULL DEFAULT '0' COMMENT 'The Unix timestamp when the node was created.',
   PRIMARY KEY (`nid`,`tid`),
   KEY `term_node` (`tid`,`status`,`sticky`,`created`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Maintains denormalized information about node/term…';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Maintains denormalized information about node/term…';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1768,7 +1768,7 @@ CREATE TABLE `taxonomy_term__parent` (
   KEY `revision_id` (`revision_id`),
   KEY `parent_target_id` (`parent_target_id`),
   KEY `bundle_delta_target_id` (`bundle`,`delta`,`parent_target_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Data storage for taxonomy_term field parent.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Data storage for taxonomy_term field parent.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1798,7 +1798,7 @@ CREATE TABLE `taxonomy_term_data` (
   UNIQUE KEY `taxonomy_term_field__uuid__value` (`uuid`),
   UNIQUE KEY `taxonomy_term__revision_id` (`revision_id`),
   KEY `taxonomy_term_field__vid__target_id` (`vid`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='The base table for taxonomy_term entities.';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The base table for taxonomy_term entities.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1838,7 +1838,7 @@ CREATE TABLE `taxonomy_term_field_data` (
   KEY `taxonomy_term__status_vid` (`status`,`vid`,`tid`),
   KEY `taxonomy_term__tree` (`vid`,`weight`,`name`(191)),
   KEY `taxonomy_term__vid_name` (`vid`,`name`(191))
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='The data table for taxonomy_term entities.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The data table for taxonomy_term entities.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1872,7 +1872,7 @@ CREATE TABLE `taxonomy_term_field_revision` (
   PRIMARY KEY (`revision_id`,`langcode`),
   KEY `taxonomy_term__id__default_langcode__langcode` (`tid`,`default_langcode`,`langcode`),
   KEY `taxonomy_term_field__description__format` (`description__format`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='The revision data table for taxonomy_term entities.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The revision data table for taxonomy_term entities.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1903,7 +1903,7 @@ CREATE TABLE `taxonomy_term_revision` (
   PRIMARY KEY (`revision_id`),
   KEY `taxonomy_term__tid` (`tid`),
   KEY `taxonomy_term_field__revision_user__target_id` (`revision_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='The revision table for taxonomy_term entities.';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The revision table for taxonomy_term entities.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1935,7 +1935,7 @@ CREATE TABLE `taxonomy_term_revision__parent` (
   KEY `bundle` (`bundle`),
   KEY `revision_id` (`revision_id`),
   KEY `parent_target_id` (`parent_target_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Revision archive storage for taxonomy_term field parent.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Revision archive storage for taxonomy_term field parent.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1967,7 +1967,7 @@ CREATE TABLE `user__roles` (
   KEY `bundle` (`bundle`),
   KEY `revision_id` (`revision_id`),
   KEY `roles_target_id` (`roles_target_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Data storage for user field roles.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Data storage for user field roles.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1992,7 +1992,7 @@ CREATE TABLE `users` (
   `langcode` varchar(12) CHARACTER SET ascii COLLATE ascii_general_ci NOT NULL,
   PRIMARY KEY (`uid`),
   UNIQUE KEY `user_field__uuid__value` (`uuid`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='The base table for user entities.';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The base table for user entities.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2021,7 +2021,7 @@ CREATE TABLE `users_data` (
   PRIMARY KEY (`uid`,`module`,`name`),
   KEY `module` (`module`),
   KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Stores module data as key/value pairs per user.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Stores module data as key/value pairs per user.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2062,7 +2062,7 @@ CREATE TABLE `users_field_data` (
   KEY `user_field__mail` (`mail`(191)),
   KEY `user_field__created` (`created`),
   KEY `user_field__access` (`access`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='The data table for user entities.';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='The data table for user entities.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2098,7 +2098,7 @@ CREATE TABLE `watchdog` (
   KEY `type` (`type`),
   KEY `uid` (`uid`),
   KEY `severity` (`severity`)
-) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='Table that contains logs of all system events.';
+) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Table that contains logs of all system events.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
